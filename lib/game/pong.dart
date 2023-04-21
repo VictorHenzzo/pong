@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:pong/game/components/player/player.dart';
 
 class Pong extends FlameGame with SingleGameInstance, PanDetector {
-  Pong(this.player);
+  Pong();
 
   @override
   //TODO Arrumar esse null check
   Color backgroundColor() => Colors.grey[900]!;
 
-  final Player player;
+  final Player player = Player();
 
   @override
   Future<void> onLoad() async {
