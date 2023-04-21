@@ -1,11 +1,10 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart' hide Draggable;
 import 'package:pong/game/pong.dart';
 
-//TODO Tarocar para um sprite component https://docs.flame-engine.org/latest/flame/components.html
+//TODO Trocar para um sprite component https://docs.flame-engine.org/latest/flame/components.html
 class Player extends PositionComponent with HasGameRef<Pong> {
   Player() : super(priority: 1);
 
@@ -18,6 +17,7 @@ class Player extends PositionComponent with HasGameRef<Pong> {
   @override
   void render(Canvas canvas) {
     super.render(canvas);
+
     canvas.drawRect(size.toRect(), _paint);
   }
 
@@ -27,11 +27,10 @@ class Player extends PositionComponent with HasGameRef<Pong> {
     width = playerWidth;
     height = playerHeight;
     anchor = playerAnchor;
-
     return super.onLoad();
   }
 
   void move(Vector2 delta) {
-    position.add(delta);
+    position.x += delta.x;
   }
 }
