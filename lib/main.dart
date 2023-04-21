@@ -1,22 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pong/modules/game_home/navigation/route/game_home_route.dart';
+import 'package:pong/pong_game_app.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pong',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: GameHomeRoute.buildScreen(),
-    );
-  }
+  runApp(const PongGameApp());
 }
