@@ -10,4 +10,5 @@
 [] Sprites customization system
 [] Music customization
 [] Mute all sounds and change volume
-
+[] Convert game to a camera
+[] Pause controll
