@@ -10,16 +10,24 @@ class Pong extends FlameGame with SingleGameInstance, PanDetector {
   //TODO Arrumar esse null check
   Color backgroundColor() => Colors.grey[900]!;
 
-  final Player player = Player();
+  final Player bottomPlayer = Player(
+    playerType: PlayerType.bottom,
+  );
+
+  final Player topPlayer = Player(
+    playerType: PlayerType.top,
+  );
 
   @override
   Future<void> onLoad() async {
-    add(player);
+    add(bottomPlayer);
+    add(topPlayer);
   }
 
   @override
   void onPanUpdate(DragUpdateInfo info) {
     super.onPanUpdate(info);
-    player.move(info.delta.game);
+    bottomPlayer.move(info.delta.game);
+    topPlayer.move(info.delta.game);
   }
 }

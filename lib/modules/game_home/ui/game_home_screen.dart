@@ -12,9 +12,10 @@ class GameHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //TODO Adicionar ClipRect para limitar o canvas
-      body: GameWidget(
-        game: pong,
+      body: ClipRect(
+        child: GameWidget(
+          game: pong,
+        ),
       ),
     );
   }
